@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var celcius: UILabel!
     @IBOutlet weak var fahrenheit: UILabel!
     @IBOutlet weak var slider: UISlider! {
@@ -20,24 +21,13 @@ class ViewController: UIViewController {
         }
     }
     
-    
-    override func viewDidLoad() {
-        
-        
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-
+    // MARK: - IBActions
     @IBAction func converter(_ sender: UISlider) {
-        
         let temperatureCel = Int(round(sender.value))
         celcius.text = "\(temperatureCel)ºC"
         
         let temperatureFar = Int(round((sender.value * 9 / 5) + 32))
-        
         fahrenheit.text = "\(temperatureFar)ºF"
-        
     }
-    
 }
 
